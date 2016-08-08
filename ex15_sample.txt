@@ -1,0 +1,4 @@
+This is a sample file.
+A sample file for exercise 15.
+I will learn about reading files in this exercise.
+Python is pretty cool, so far.
