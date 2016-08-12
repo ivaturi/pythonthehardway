@@ -13,6 +13,7 @@
 
 ### NOTES
 # The following set of commands Import a bunch of standard libraries.
+# (import order doesn't matter...http://stackoverflow.com/a/26804809)
 ###
 import cgi
 import codecs
