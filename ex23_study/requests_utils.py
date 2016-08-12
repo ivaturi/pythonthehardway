@@ -1,16 +1,19 @@
-# utils.py, from the <requests> library:
+# Exercise 23: Self study (pick a random script and analyze it)
+#
+# This is <requests/utils.py> from the <requests> library:
 # https://github.com/kennethreitz/requests
 
+### NOTES
 # Pointers from PEP 8, about importing libraries:
-# - Import each library on its own separate line
-# - Imports should be the first thing in any script
-# - Order of import precedence: standard > third party > local, separated by a blank line
-# - 
-# 
+# - Import each library on its own separate line.
+# - Imports should be the first thing in any script.
+# - Order of import precedence: standard > third party > local, separated by a blank line.
+# - Prefer absolute imports over explicit relative imports
+###
 
-# NOTES ---
-# Import a bunch of standard libraries
-# ---
+### NOTES
+# The following set of commands Import a bunch of standard libraries.
+###
 import cgi
 import codecs
 import collections
@@ -21,13 +24,14 @@ import socket
 import struct
 import warnings
 
-# NOTES: --- 
-# Explicit relative imports
+### NOTES
+# The following group of commands are 'Explicit relative imports'.
 # - these are libraries that are shipped with the code, and are referred to by 
-#   their relative paths
+#   their relative paths.
+# - the dot '.' in the command is used to refer to the directory structure.
 # - if we are importing too many things from a library to fit on one line, we
-#   can wrap them in parentheses
-# ---
+#   can wrap them in parentheses.
+###
 from . import __version__
 from . import certs
 from .compat import parse_http_list as _parse_list_header
