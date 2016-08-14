@@ -43,13 +43,26 @@ from .cookies import RequestsCookieJar, cookiejar_from_dict
 from .structures import CaseInsensitiveDict
 from .exceptions import InvalidURL, InvalidHeader, FileModeWarning
 
+### NOTES
+# Initialize a tuple; tuples  are a number of values separated by commas
+#
+# Properties of tuples:
+#  - Heterogenous
+#  - Immutable (they can still contain mutables, like arrays)
+#  
+# Tuples are pretty useful: https://mail.python.org/pipermail/tutor/2001-September/008888.html
+#
+# The following command (ugly according to the manual) creates a one-element tuple
+###
 _hush_pyflakes = (RequestsCookieJar,)
 
 NETRC_FILES = ('.netrc', '_netrc')
 
 DEFAULT_CA_BUNDLE_PATH = certs.where()
 
-
+### NOTES
+# Function definitions
+###
 def dict_to_sequence(d):
     """Returns an internal sequence dictionary update."""
 
