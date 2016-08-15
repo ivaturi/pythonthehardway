@@ -82,6 +82,7 @@ def dict_to_sequence(d):
 # The docstring for the code object is available on that code object's '__doc__' attribute.
     """Returns an internal sequence dictionary update."""
 
+    # conditional
     if hasattr(d, 'items'):
         d = d.items()
 
@@ -185,7 +186,6 @@ def get_netrc_auth(url, raise_errors=False):
     # AppEngine hackiness.
     except (ImportError, AttributeError):
         pass
-
 
 def guess_filename(obj):
     """Tries to guess the filename of the given object."""
