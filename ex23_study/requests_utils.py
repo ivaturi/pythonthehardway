@@ -56,7 +56,7 @@ from .exceptions import InvalidURL, InvalidHeader, FileModeWarning
 ###
 _hush_pyflakes = (RequestsCookieJar,)
 
-# another tuple
+# another tuple (see below for ALLCAPS)
 NETRC_FILES = ('.netrc', '_netrc')
 
 ### NOTES
@@ -75,6 +75,11 @@ DEFAULT_CA_BUNDLE_PATH = certs.where()
 # Function definitions
 ###
 def dict_to_sequence(d):
+# This is a 'docstring' (see https://en.wikipedia.org/wiki/Docstring)
+# From wikipedia:
+# A docstring is a string literal specified in source code that is used, like a comment,
+#  to document a specific segment of code. 
+# The docstring for the code object is available on that code object's '__doc__' attribute.
     """Returns an internal sequence dictionary update."""
 
     if hasattr(d, 'items'):
