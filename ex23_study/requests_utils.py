@@ -56,8 +56,19 @@ from .exceptions import InvalidURL, InvalidHeader, FileModeWarning
 ###
 _hush_pyflakes = (RequestsCookieJar,)
 
+# another tuple
 NETRC_FILES = ('.netrc', '_netrc')
 
+### NOTES
+# A variable in all uppercase indicates a constant.
+# 
+# Python doesn't natively support constants, and this (from the Python Cookbook) 
+# seems to be a commonly accepted way of defining a constant:
+# https://gist.github.com/ashwin/e3844158e3d7afd16adb#file-const-py
+#
+# However, standard modules (and standard coding practices) use ALLCAPS to indicate that something
+# is intended to be a constant; this seems to be a good enough thing to do. 
+### 
 DEFAULT_CA_BUNDLE_PATH = certs.where()
 
 ### NOTES
