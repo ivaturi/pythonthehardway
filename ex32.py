@@ -31,3 +31,13 @@ for count in range(25,33):
 
 for element in elements:
     print "Element was: %d" % element
+
+
+### Study drills ###
+
+# What type is a range?
+print "range(0,6) is of type *%s*" % type(range(0,6))
+
+# Assign a range to a list
+range_list = range(0,6)
+print range_list
