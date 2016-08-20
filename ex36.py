@@ -65,6 +65,20 @@ def enter():
     say(description, actions, consequences)
  
 def main_door_look():
+    """Looking into the house"""
+    description = "You are at one end of a dimy lit corridor. A few feet away, there seems to be a door on your right.\nThe walls are a dull green, and lined by what seem to be really old family photos.\nThe floor is creaky in places, and sounds surprisingly hollow."
+    actions = ("Look at the photos", "Walk towards the door", "Inspect the floor")
+    consequences = (boring, to_storage_door, inspect_floor)
+    #send to the user
+    say(description, actions, consequences)
+
+def boring():
+    end("TBD")
+
+def to_storage_door():
+    end("TBD")
+
+def inspect_floor():
     end("TBD")
 
 # let's play a game
