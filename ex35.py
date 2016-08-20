@@ -24,6 +24,24 @@ def gold_room():
     else:
         dead("You greedy bastard!")
 
+def gold_room_fix():
+    print "This room is full of gold. How much do you take?"
+    
+    # get some input
+    choice = raw_input()
+    
+    # check if the user entered a number
+    if choice.isdigit():
+        how_much = int(choice)
+        if how_much < 50:
+            print "Nice, you're not greedy, you win!"
+            exit(0)
+        else:
+            dead("You greedy bastard!")
+    else:
+        print "Man, learn to type a number."
+        gold_room_fix()
+
 
 def bear_room():
     print "There is a bear here."
@@ -44,7 +62,7 @@ def bear_room():
         elif choice == "taunt bear" and bear_moved:
             dead("The bear gets pissed off and chews your legs off.")
         elif choice == "open door" and bear_moved:
-            gold_room()
+            gold_room_fix()
         else:
             print "I got no idea what that means."
 
