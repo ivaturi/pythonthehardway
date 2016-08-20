@@ -1,25 +1,7 @@
 #! /usr/bin/python
 # encoding: UTF-8
 
-# Rules for if-statements:
-#  - Every if statement must have an else
-#  - In else-statements that 'should never run', use die() 
-#  - Never nest if-statements more than two deep 
-#  - Blank lines before and after if-elif-else statements
-#  - Move complex boolean calculations outside if-checks
-
-
-# Rules for loops:
-#  - Try and never use while-loops
-#  - Use for-loops when there are a fixed or limited number of things to loop over
-
-# Debugging
-#  - Use print statements to check what is happening in the code 
-#  - Code a little, run a little, fix a little
-
-
-## Homework ##
-
+#
 #                     | - door - |
 #                     |          |
 #                     |          |
@@ -27,36 +9,54 @@
 #  |   Storage       /           |
 #  |   (1x torch)                |
 #  ———————————————————           |
+#
 
 
 # door >>> keys >>> storage room >>> box >>> torch
 
+from sys import exit
 
-# first, some utility functions
-def build_message(description, *args):
-    """Provide some description, and a list of things the user can do"""
+
+#  A helper to provde the user with a description and some actions
+def say(description, actions = (), consequences = ()):
+    """Provide a description, a list of things the user can do, and the consequences of each action"""
     print description
     # do we give the user something to do?
-    if len(args) > 0:
-        print "The following actions are available:"
+    if len(actions) > 0:
         action_counter = 0
-        for action in args:
+        for action in actions:
             print "%d : %s" % (action_counter+1, action)
             action_counter += 1
-        print "What do you want to do?"
         choice = int(raw_input("> "))
-        return choice
+        consequences[choice-1]()
 
 
 def start():
     """The beginning"""
     description = "You are at a door. It seems unlocked, but there is a faint light behind the door."
     actions = ("Turn away", "Knock the door", "Open the door")
-    
-    # what does the user say? 
-    user_say = build_message(description, *actions)
-    
+    consequences = (end,knock,enter)
 
+    # what does the user say? 
+    say(description, actions, consequences)
+   
+
+def end(message = "You have left the game"):
+    """Leave the game"""
+    say(message)
+    exit(0)
+
+
+def knock():
+    """What happens if you knock the door?"""
+    description = "You knock the door, but nothing happens."
+    actions = ("Turn away","Open the door")
+    consequences = (end, enter)
+    # send to the user
+    say(description, actions, consequences)
+
+def enter():
+    end("TBD")
 
 # let's play a game
 start()
