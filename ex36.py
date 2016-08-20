@@ -32,20 +32,21 @@ def say(description, actions = (), consequences = ()):
 
 
 def start():
+    # we start at the main door
+    main_door()
+
+def main_door():
     """The beginning"""
     description = "You are at a door. It seems unlocked, but there is a faint light behind the door."
     actions = ("Turn away", "Knock the door", "Open the door")
     consequences = (end,knock,enter)
-
-    # what does the user say? 
+    # send to the user 
     say(description, actions, consequences)
    
-
 def end(message = "You have left the game"):
     """Leave the game"""
     say(message)
     exit(0)
-
 
 def knock():
     """What happens if you knock the door?"""
@@ -56,6 +57,14 @@ def knock():
     say(description, actions, consequences)
 
 def enter():
+    """Enter the house"""
+    description = "You open the door and enter the house. A faint TV plays in the other room, but there doesn't seem to be anyone else home."
+    actions = ("Look around", "Go outside")
+    consequences = (main_door_look, end)
+    # send to the user
+    say(description, actions, consequences)
+ 
+def main_door_look():
     end("TBD")
 
 # let's play a game
