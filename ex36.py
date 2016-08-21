@@ -73,7 +73,11 @@ def main_door_look():
     say(description, actions, consequences)
 
 def boring():
-    end("TBD")
+    description = "The photos aren't particularly interesting."
+    actions = ("Walk towards the door", "Inspect the floor")
+    consequences = (to_storage_door, inspect_floor)
+    #send to the user
+    say(description, actions, consequences)
 
 def to_storage_door():
     end("TBD")
