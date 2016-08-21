@@ -35,6 +35,12 @@ def start():
     # we start at the main door
     main_door()
 
+def end(message = "You have left the game"):
+    """Leave the game"""
+    say(message)
+    exit(0)
+
+# plot...
 def main_door():
     """The beginning"""
     description = "You are at a door. It seems unlocked, but there is a faint light behind the door."
@@ -43,11 +49,6 @@ def main_door():
     # send to the user 
     say(description, actions, consequences)
    
-def end(message = "You have left the game"):
-    """Leave the game"""
-    say(message)
-    exit(0)
-
 def knock():
     """What happens if you knock the door?"""
     description = "You knock the door, but nothing happens."
