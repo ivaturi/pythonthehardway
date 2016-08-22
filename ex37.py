@@ -26,14 +26,15 @@ for count in range(0,3):
     print "count is %d" % count
 
 
-# assert
-print "-- assert --"
+#####   ASSERT ######
+#     Assert statements are used to insert debugging assetions into a program
+#     They help to ascertain that the internal state of a program is as we expect
+#     it to be.
 
-# notes:
-# Assert statements are used to insert debugging assetions into a program
-# They help to ascertain that the internal state of a program is as we expect
-# it to be.
+#    If an assert fails, an AssertionError is thrown; unless this is handled by
+#    an 'except' block, the program will terminate.
 
+print "-- Assert --"
 def check_square(num, num_square):
     """This function checks if you have guessed the square of a number correctly"""
     assert num_square == num**2
