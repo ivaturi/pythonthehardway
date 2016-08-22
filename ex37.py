@@ -25,8 +25,21 @@ print "-- Loops --"
 for count in range(0,3):
     print "count is %d" % count
 
+##### BREAK #####
+#    'break' terminates the nearest enlosing loop.
+#    It should only be used under 'for' or 'while' loops
+#
+#    Within a try-except block, 'break' doesn't immediately
+#    break flow; it moves the flow to 'finally' before exiting.
+print "-- Break --"
+for loop_counter in range(0,20):
+    print "%d" % loop_counter,
+    if loop_counter == 11:
+        print "\nUh oh. I met a 11. Peace out."
+        break
 
-#####   ASSERT ######
+
+##### ASSERT ######
 #     Assert statements are used to insert debugging assetions into a program
 #     They help to ascertain that the internal state of a program is as we expect
 #     it to be.
@@ -43,7 +56,6 @@ def check_square(num, num_square):
 print "check_square(2,4) >>> ", check_square(2,4)
 #print "check_square(3,6) >>> ", check_square(3,6)  # <--- This will throw an AssertionError
 
-
 from types import *
 def test_assert(x,y):
     """this function accepts numeric inputs, and checks if the inputs are really numerical"""
@@ -52,3 +64,4 @@ def test_assert(x,y):
 
 test_assert(1, 2.2)
 #test_assert(2.2, 1)  # <--- This will throw an AssertionError, because the first input is not an integer     
+
