@@ -9,6 +9,7 @@ print "True or False is >>> ", True or False
 print "True and not False is >>> ", True and not False
 
 # conditional flow
+print "\n"
 print "-- Keywords (conditional) --"
 a = 10
 b = 12
@@ -20,7 +21,8 @@ elif a==b:
 else:
     print "a is greater than b"
 
-# Loops    
+# Loops
+print "\n"    
 print "-- Loops --"
 for count in range(0,3):
     print "count is %d" % count
@@ -31,6 +33,7 @@ for count in range(0,3):
 #
 #    Within a try-except block, 'break' doesn't immediately
 #    break flow; it moves the flow to 'finally' before exiting.
+print "\n"
 print "-- Break --"
 for loop_counter in range(0,20):
     print "%d" % loop_counter,
@@ -38,6 +41,18 @@ for loop_counter in range(0,20):
         print "\nUh oh. I met a 11. Peace out."
         break
 
+        
+##### CONTINUE #####
+#    This keyword is used in for and while loops, to continue with
+#    the next cycle of the loop
+print "\n"
+print "-- Continue --"
+for count in range(1,20):
+    if count%2 != 0:
+        print "%d" % count,
+    else:
+        continue # don't print even numbers
+print "\n"
 
 ##### ASSERT ######
 #     Assert statements are used to insert debugging assetions into a program
@@ -64,4 +79,6 @@ def test_assert(x,y):
 
 test_assert(1, 2.2)
 #test_assert(2.2, 1)  # <--- This will throw an AssertionError, because the first input is not an integer     
+
+
 
