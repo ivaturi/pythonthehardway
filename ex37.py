@@ -119,3 +119,19 @@ test_assert(1, 2.2)
 
 # If an exception is raised and isn't caught by any 'except' statement
 #  the program is terminated.
+print "\n"
+print "-- try-except-finally --"
+global a
+
+try:
+    a = 1/0
+# we can catch specific exceptions like this:
+except ZeroDivisionError:
+    print "ERROR! You tried to divide by zero!"
+    # we can catch generic exceptions like this:
+except:
+    print "ERROR! You did something wrong!"
+finally:
+    a = 1/2.0
+
+print "a = %f" % a
