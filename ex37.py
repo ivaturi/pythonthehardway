@@ -49,10 +49,15 @@ print "\n"
 print "-- Continue --"
 for count in range(1,20):
     if count%2 != 0:
-        print "%d" % count,
+        print "%d" % count
+    elif count%5 == 0:
+        # if a number is even and a multiple of 5, print it
+        print "%d (even multiple of 5!)" % count
     else:
-        continue # don't print even numbers
+        # don't print even numbers
+        continue
 print "\n"
+
 
 ##### ASSERT ######
 #     Assert statements are used to insert debugging assetions into a program
@@ -79,6 +84,3 @@ def test_assert(x,y):
 
 test_assert(1, 2.2)
 #test_assert(2.2, 1)  # <--- This will throw an AssertionError, because the first input is not an integer     
-
-
-
