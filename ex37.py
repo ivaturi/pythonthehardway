@@ -58,6 +58,21 @@ for count in range(1,20):
         continue
 print "\n"
 
+##### EXEC #####
+#    This keyword is used to execute other python statements
+#    Try to avoid using this, because it introduces (usually) unnecessary complexity
+print "-- Exec --"
+list_builder = "exec_list = [1,2,3,4,5,6,7]"
+exec list_builder
+print "exec_list: ", exec_list
+
+function_builder = """
+def exec_function():
+\tprint "This function is created within an exec block"
+"""
+
+exec function_builder
+exec_function()
 
 ##### ASSERT ######
 #     Assert statements are used to insert debugging assetions into a program
@@ -66,7 +81,7 @@ print "\n"
 
 #    If an assert fails, an AssertionError is thrown; unless this is handled by
 #    an 'except' block, the program will terminate.
-
+print "\n"
 print "-- Assert --"
 def check_square(num, num_square):
     """This function checks if you have guessed the square of a number correctly"""
