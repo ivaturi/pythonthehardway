@@ -42,3 +42,8 @@ print map(lambda x: x**2, my_array)
 # compute the sum of the elements of the array
 print "Sum"
 print reduce(lambda x,y: x+y, my_array)
+
+# (more on map and reduce later)
+#
+# Links:
+#    http://www.secnetix.de/olli/Python/lambda_functions.hawk
