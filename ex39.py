@@ -34,3 +34,12 @@ print "-----------------"
 del profile[1]
 del profile['alias']
 print "Updated profile: ", profile
+
+
+print "----------------------"
+print "Iterating over entries"
+print "----------------------"
+
+for key in profile:
+    print "  key : ", key
+    print "value : ", profile[key]
