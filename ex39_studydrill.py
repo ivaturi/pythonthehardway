@@ -108,3 +108,49 @@ except:
 # we can handle this in an easier way...
 element = westeros.pop("essos", None)
 print "Trying to pop a nonexistent key...the answer is",element
+
+
+#
+# Ordered dictionaries
+# --------------------
+# An ordered dictionary is like a dictionary, but one that lets you
+# preserve the order of the keys it is assigned
+#
+
+print "\nOrdered Dictionary"
+print "------------------"
+
+from collections import OrderedDict
+
+d = OrderedDict()
+d['a'] = 1
+d['z'] = 2
+d['c'] = 3
+d['b'] = 4
+
+print "OrderedDict preserves order:", list(d.keys())
+
+# compare this to a regular dictionary:
+
+d = dict()
+d['a'] = 1
+d['z'] = 2
+d['c'] = 3
+d['b'] = 4
+
+print "A regular dict doesn't:", list(d.keys())
+
+
+# OrderedDicts are only equal if they have their keys in the same order
+
+d1 = OrderedDict()
+d1['a'] = 'A'
+d1['b'] = 'B'
+d1['c'] = 'C'
+
+d2 = OrderedDict()
+d2['c'] = 'C'
+d2['b'] = 'B'
+d2['a'] = 'A'
+
+print "OrderedDict equality:", d1 == d2
