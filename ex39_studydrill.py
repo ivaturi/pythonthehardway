@@ -8,6 +8,8 @@
 ## The keys of a dictionary should be hashable
 ## (the immutable basic types that are supported by python)
 ##
+##  - The ordering of elements is not important within a dictionary
+##  - The keys used for different elements within a dictionary must be unique
 ##
 
 #
@@ -45,4 +47,14 @@ lords = dict(
     baratheon = 'robert'
 )
 print "lords: ", lords
+
+# Using tuples
+heroes = dict([
+    ('north' , 'Jon Snow'),
+    ('south' , 'Unknown'),
+    ( 'east' , 'Varys' ),
+    ( 'west' , 'Jaime')
+])
+print "heroes: ", heroes
+
 
