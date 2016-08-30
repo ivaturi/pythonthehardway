@@ -28,3 +28,9 @@ the_reynes = Song(["And who are you",
                    "that I must bow so low?"])
 
 the_reynes.sing_me_a_song()
+
+
+my_lyrics = ["Far over the misty mountains cold\nTo dungeons deep and caverns old\nWe must away ere break of day\nTo seek the pale enchanted gold."]
+
+thorin_oakenshield = Song(my_lyrics)
+thorin_oakenshield.sing_me_a_song()
