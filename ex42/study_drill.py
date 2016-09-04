@@ -31,7 +31,7 @@ used to derive instances, it is a 'class' and not an 'object'.
 
   Object <<< (instance of) <<< Class <<< (instance of) <<< Metaclass
 
-Becase a class is an object, we can: 
+Because a class is an object, we can: 
  - assign it to a variable
  - copy it
  - create it dynamically
