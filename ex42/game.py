@@ -18,7 +18,8 @@ class Engine(object):
 #    - retrieve the user's choice
 #    - point to the next scene
 class Scene(object):
-    def __init__():
+    def __init__(self, scene_class):
+        """"""
         pass
     
     def enter(self):
