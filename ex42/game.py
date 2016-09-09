@@ -2,6 +2,55 @@
 
 # A simple game engine
 
+class User(object):
+    def __init__(self):
+        # start with perfect health
+        self.health = 100
+        # start with a random name
+        self._name   = "John Doe"
+        # kill count
+        self.kills  = 0
+        # how many rooms have I gone through?
+        self.num_rooms = 0
+
+    def say(self,thing = ""):
+        print thing
+
+    def ask(self, thing = ""):
+        if len(thing) > 1:
+            print thing
+        return(raw_input("> "))
+    
+    def set_name(self):
+       self._name = self.ask("What is your name?") 
+
+    def get_name(self):
+        return self._name
+       
+# Scene
+class Scene(object):
+    def __init__(self):
+        """
+        Base class for scenes
+        """
+        self.description = "Scene description goes here"
+        self.monsters = []
+        self.objects  = []
+    
+# Let's build a few locations for the map
+scene_descriptions = {
+    "first" : "Welcome to the game, %s."
+    "last"  : "Goodbye, %s. It was fun knowing you."
+}
+
+
+# The map 
+class Map(object):
+    def __init__(self):
+        pass
+  
+
+
 class Engine(object):
     def __init__(self, scene_map):
         self.map = scene_map
@@ -11,70 +60,8 @@ class Engine(object):
         self.map.opening_scene()
         pass
 
-# The superclass for scenes
-# A scene does the following:
-#    - present itself to the player (enter)
-#    - pose a question and offer choices (ask)
-#    - retrieve the user's choice
-#    - point to the next scene
-class Scene(object):
-    def __init__(self, scene_class):
-        """"""
-        pass
-    
-    def enter(self):
-        pass
-
-    def do(self):
-        pass
-
- 
-class Opening(self):
-    def enter(self):
-        pass
 
     
-class Death(Scene):
-    def enter(self):
-        pass
-
-class CentralCorridor(Scene):
-    def enter(self):
-        print "Central corridor!"
-
-class LaserWeaponArmory(Scene):
-    def enter(self):
-        pass
-
-class TheBridge(Scene):
-    def enter(self):
-        pass
-
-class EscapePod(Scene):
-    def enter(self):
-        pass
-
-# The map 
-class Map(object):
-    def __init__(self, start_scene):
-        self.scenes = [
-            EscapePod,
-            TheBridge,
-            Death,
-            LaserWeaponArmory,
-            CentralCorridor
-        ]
-        import random
-        
-    def next_scene(self):
-        # pick a random scene
-        random.choice()().enter()
-        
-
-    def opening_scene(self):
-        CentralCorridor().enter()     
-        pass
-
-a_map = Map('central corridor')
-a_game = Engine(a_map)
-a_game.play()
+user = User()
+user.set_name()
+print user.get_name()
