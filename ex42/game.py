@@ -7,81 +7,39 @@
 #
 #
 
-# A simple game engine
-class Player(object):
-    """
-    Player handler
-    """
-    def __init__(self):
+from sys import exit
+from random import randint
 
-        self.__name   = "John Doe"
-
-    def __console(self):
-        """
-        Template for accepting user input
-        """
-        return raw_input("> ")
-    
-    def say(self,message = ""):
-        """
-        Prints a message to the console
-        """
-        print message
-
-    def ask(self, thing = ""):
-        if len(thing) > 1:
-            print thing
-        return self.__console()
-    
-    def set_name(self,name = ""):
-       self.__name = name 
-
-    def get_name(self):
-        return self.__name
-       
-# Scene
 class Scene(object):
-    def __init__(self, description = ""):
-        """
-        Base class for scenes
-        """
-        self.__description = description
-        
-        
-    
-# Let's build a few locations for the map
-scene_descriptions = {
-    "first" : "Welcome to the game, %s.",
-    "room"  : "Welcome to room %s",
-    "last"  : "Goodbye, %s. It was fun knowing you."
-}
 
-
-# The map 
-class Map(object):
-    def __init__(self, num_scenes = 3):
-        """
-        Initiates a map with a given number of scenes
-        The minimum number of scenes is 3, so if a lesser number
-        is given, the map still chooses 3 scenes.
-        """
-        if num_scenes < 3:
-            num_scenes = 3
-
-        # build a room-name array:
-        self.__scenes = ["first"]
-        for count in range(1,num_scenes-1):
-            self.__scenes.append("room")
-
-        self.__scenes.append("last")
-        print self.__scenes
-
+    def enter(self):
+        print "This scene is not yet configured. Subclass it and implement enter()"
+        exit(1)
 
 class Engine(object):
+
     def __init__(self, scene_map):
-        self.map = scene_map
-        pass
+        self.scene_map = scene_map
 
     def play(self):
-        self.map.opening_scene()
-        pass
+        current_scene = self.scene_map.opening_scene()
+        last_scene = self.scene_map.next_scene('finished')
+
+        while current_scene != last_scene:
+            next_scene_name = current_scene.enter()
+            current_scene = self.scene_map.next_scene(next_scene_name)
+
+        current_scene.enter()
+
+class Death(Scene):
+
+    quips = [
+        "You died. You kinda suck at this.",
+        "Your mom would be proud...if she was smarter.",
+        "What a loser.",
+        "I have a small puppy that is better at this."
+    ]
+
+    def enter(self):
+        print Death.quips[randint(0, len(Death.quips)-1)]
+        exit(1)
