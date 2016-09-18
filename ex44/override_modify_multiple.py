@@ -26,4 +26,4 @@ Child1().say()
 Child2().say()
 
 
-# Method Resolution Order for multiple inheritance: left > upwards > right (oversimplified)
+# Method Resolution Order for multiple inheritance: C3 (oversimplified: left > up > right)
