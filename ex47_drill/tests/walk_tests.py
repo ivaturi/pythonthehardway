@@ -1,11 +1,5 @@
 from nose.tools import *
-import walk
+from walk.models import Room
 
-def setup():
-    print "SETUP"
-
-def teardown():
-    print "TEARDOWN"
-
-def test_basic():
-    print "I RAN"
+def test_room():
+    my_room = Room("My Room")
